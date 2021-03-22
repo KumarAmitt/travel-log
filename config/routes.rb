@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :groups
+  resources :travels
   root 'users#index'
 
   get 'users/index'

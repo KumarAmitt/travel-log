@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Employee:</strong>
+  <%= @travel.employee_id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @travel.name %>
+</p>
+
+<p>
+  <strong>Source:</strong>
+  <%= @travel.source %>
+</p>
+
+<p>
+  <strong>Destination:</strong>
+  <%= @travel.destination %>
+</p>
+
+<p>
+  <strong>Distance:</strong>
+  <%= @travel.distance %>
+</p>
+
+<%= link_to 'Edit', edit_travel_path(@travel) %> |
+<%= link_to 'Back', travels_path %>
