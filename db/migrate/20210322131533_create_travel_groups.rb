@@ -6,5 +6,6 @@ class CreateTravelGroups < ActiveRecord::Migration[6.1]
 
       t.timestamps
     end
+    add_index :travel_groups, [:travel_id, :group_id]
   end
 end

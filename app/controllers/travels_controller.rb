@@ -1,5 +1,5 @@
 class TravelsController < ApplicationController
-  before_action :set_travel, only: %i[ show edit update destroy ]
+  before_action :set_travel, only: %i[show edit update destroy]
 
   def index
     @travels = Travel.all
@@ -16,37 +16,28 @@ class TravelsController < ApplicationController
   end
 
   def create
-    @travel = Travel.new(travel_params)
+    @travel = current_user.travels.build(travel_params)
 
-    respond_to do |format|
-      if @travel.save
-        format.html { redirect_to @travel, notice: "Travel was successfully created." }
-        format.json { render :show, status: :created, location: @travel }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @travel.errors, status: :unprocessable_entity }
-      end
+    if @travel.save
+      # @travel.travel_groups.create(show_group_id)
+      redirect_to travels_path, notice: 'Travel was successfully created.'
+    else
+      render 'new', status: :unprocessable_entity
     end
+
   end
 
   def update
-    respond_to do |format|
-      if @travel.update(travel_params)
-        format.html { redirect_to @travel, notice: "Travel was successfully updated." }
-        format.json { render :show, status: :ok, location: @travel }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @travel.errors, status: :unprocessable_entity }
-      end
+    if @travel.update(travel_params)
+      redirect_to @travel, notice: "Travel was successfully updated."
+    else
+      render :edit, status: :unprocessable_entity
     end
   end
 
   def destroy
     @travel.destroy
-    respond_to do |format|
-      format.html { redirect_to travels_url, notice: "Travel was successfully destroyed." }
-      format.json { head :no_content }
-    end
+    redirect_to travels_path, notice: "Travel was successfully destroyed"
   end
 
   private
@@ -56,6 +47,11 @@ class TravelsController < ApplicationController
   end
 
   def travel_params
-    params.require(:travel).permit(:employee_id, :name, :source, :destination, :distance)
+    params.require(:travel).permit(:purpose, :source, :destination, :distance, :user_id)
   end
+
+  def show_group_id
+    params.require(:transaction).permit(:group_id)
+  end
+
 end

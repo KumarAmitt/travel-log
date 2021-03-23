@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Employee:</strong>
-  <%= @travel.employee_id %>
+  <strong>id:</strong>
+  <%= @travel.id %>
 </p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @travel.name %>
+  <strong>Purpose:</strong>
+  <%= @travel.purpose %>
 </p>
 
 <p>
@@ -23,6 +23,10 @@
 <p>
   <strong>Distance:</strong>
   <%= @travel.distance %>
+</p>
+<p>
+  <strong>user_id:</strong>
+  <%= @travel.user_id %>
 </p>
 
 <%= link_to 'Edit', edit_travel_path(@travel) %> |

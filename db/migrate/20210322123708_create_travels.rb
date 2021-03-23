@@ -5,10 +5,10 @@ class CreateTravels < ActiveRecord::Migration[6.1]
       t.string :source
       t.string :destination
       t.integer :distance
-      t.integer :author_id
+      t.integer :user_id
 
       t.timestamps
     end
-    add_index :travels, :author_id
+    add_index :travels, :user_id
   end
 end

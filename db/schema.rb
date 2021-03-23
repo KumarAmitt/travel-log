@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2021_03_22_131533) do
     t.integer "group_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["travel_id", "group_id"], name: "index_travel_groups_on_travel_id_and_group_id"
   end
 
   create_table "travels", force: :cascade do |t|
@@ -35,10 +36,10 @@ ActiveRecord::Schema.define(version: 2021_03_22_131533) do
     t.string "source"
     t.string "destination"
     t.integer "distance"
-    t.integer "author_id"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["author_id"], name: "index_travels_on_author_id"
+    t.index ["user_id"], name: "index_travels_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
