@@ -35,9 +35,15 @@
     <%= form.label :distance %>
     <%= form.number_field :distance %>
   </div>
+
   <div class="field">
     <%= form.label :user_id %>
     <%= form.number_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :group, 'Select Group' %>
+    <%= form.select :group_id, Group.all.map{|group| [group.name,group.id]}, { include_blank: true } %>
   </div>
 
   <div class="actions">
