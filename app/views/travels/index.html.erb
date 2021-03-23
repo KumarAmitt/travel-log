@@ -2,6 +2,10 @@
 
 <h1>All my Travels logs</h1>
 
+<h2>
+  Total Distance:
+  <%= @total_distance %>
+</h2>
 
 <table>
   <thead>
@@ -12,6 +16,7 @@
       <th>Destination</th>
       <th>Distance</th>
       <th>user_id</th>
+      <th>Group</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -25,6 +30,13 @@
         <td><%= travel.destination %></td>
         <td><%= travel.distance %></td>
         <td><%= travel.user_id %></td>
+
+        <% if travel.groups.first.nil? %>
+          <td><%= 'External Travel' %></td>
+        <% else %>
+          <td><%= travel.groups.first.name %></td>
+        <% end %>
+
         <td><%= link_to 'Show', travel %></td>
         <td><%= link_to 'Edit', edit_travel_path(travel) %></td>
         <td><%= link_to 'Destroy', travel, method: :delete, data: { confirm: 'Are you sure?' } %></td>

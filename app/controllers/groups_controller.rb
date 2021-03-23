@@ -2,7 +2,7 @@ class GroupsController < ApplicationController
   before_action :set_group, only: %i[show edit update destroy]
 
   def index
-    @groups = Group.all
+    @groups = Group.all.order('name')
   end
 
   def show
@@ -37,6 +37,7 @@ class GroupsController < ApplicationController
     @group.destroy
     redirect_to groups_url, notice: "Group was successfully destroyed."
   end
+
 
   private
 

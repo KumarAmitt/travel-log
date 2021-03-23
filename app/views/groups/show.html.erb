@@ -15,5 +15,18 @@
   <%= @group.user_id %>
 </p>
 
+<br/>
+
+<% @group.travels.each do |gt| %>
+  <li>
+    <td><%= gt.user.name %></td>
+    <td><%= gt.purpose %></td>
+  </li>
+
+<% end %>
+
+<br/>
+<br/>
+
 <%= link_to 'Edit', edit_group_path(@group) %> |
 <%= link_to 'Back', groups_path %>

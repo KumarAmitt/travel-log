@@ -2,7 +2,8 @@ class TravelsController < ApplicationController
   before_action :set_travel, only: %i[show edit update destroy]
 
   def index
-    @travels = Travel.all
+    @travels = Travel.where('user_id = ?', current_user.id).order('created_at DESC')
+    @total_distance = @travels.pluck(:distance).sum
   end
 
   def show
@@ -47,6 +48,12 @@ class TravelsController < ApplicationController
   def destroy
     @travel.destroy
     redirect_to travels_path, notice: "Travel was successfully destroyed"
+  end
+
+  def external_travel
+    @travels = Travel.where('user_id = ?', current_user.id).order('created_at DESC')
+    @external = @travels.select { |t| t.groups.size.zero? }
+    @total_distance = @external.pluck(:distance).sum
   end
 
   private
