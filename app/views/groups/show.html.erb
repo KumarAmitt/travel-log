@@ -15,6 +15,10 @@
   <%= @group.user_id %>
 </p>
 
+<% if @group.icon.attached? %>
+  <%= image_tag @group.icon %>
+<% end %>
+
 <br/>
 
 <% @group.travels.each do |gt| %>
