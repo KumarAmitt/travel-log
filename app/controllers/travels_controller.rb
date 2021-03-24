@@ -63,7 +63,7 @@ class TravelsController < ApplicationController
   end
 
   def travel_params
-    params.require(:travel).permit(:purpose, :source, :destination, :distance, :user_id)
+    params.require(:travel).permit(:purpose, :source, :destination, :distance, :user_id, travel_ids: [])
   end
 
   def show_group_id

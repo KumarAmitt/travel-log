@@ -8,6 +8,7 @@
       <th>ID</th>
       <th>Name</th>
       <th>user_id</th>
+      <th>Author</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,6 +19,7 @@
         <td><%= group.id %></td>
         <td><%= group.name %></td>
         <td><%= group.user_id %></td>
+        <td><%= group.user.name %></td>
         <td><%= link_to 'Show', group %></td>
         <td><%= link_to 'Edit', edit_group_path(group) %></td>
         <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
