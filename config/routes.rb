@@ -2,9 +2,10 @@ Rails.application.routes.draw do
 
   resources :groups
   resources :travels
-  root 'users#index'
+  root 'users#profile'
 
-  get 'users/index'
+  # get 'users/profile'
+
   devise_for :users
 
   get 'external', to: 'travels#external_travel'

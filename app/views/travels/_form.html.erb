@@ -47,9 +47,7 @@
     <%#= form.collection_select(:group_id, Group.all, :id, :name) %>
 <!--  </div>-->
 
-<%= form.collection_check_boxes(:travel_group_ids, TravelGroup.all, :id, ) do |d| %>
-    <%= d.label {d.check_box} %>
-<%end %>
+<%= form.collection_check_boxes( :group_ids, Group.all, :id, :name ) %>
 
 
 
