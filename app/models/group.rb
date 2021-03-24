@@ -6,4 +6,6 @@ class Group < ApplicationRecord
 
   has_many :travel_groups, dependent: :destroy
   has_many :travels, through: :travel_groups
+
+  scope :alphabetically, -> { order('name') }
 end

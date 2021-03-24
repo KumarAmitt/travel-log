@@ -6,4 +6,7 @@ class Travel < ApplicationRecord
   has_many :groups, through: :travel_groups
 
   validates :purpose, presence: true
+  validates :distance, presence: true
+
+  scope :recent_first, -> { order('created_at DESC') }
 end

@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 
 <p>
   <strong>ID:</strong>
@@ -15,19 +14,21 @@
   <%= @group.user_id %>
 </p>
 
-<% if @group.icon.attached? %>
-  <%= image_tag @group.icon %>
-<% end %>
+<%= group_icon(@group) %>
 
 <br/>
 
-<% @group.travels.each do |gt| %>
+<% @group_travels.each do |gt| %>
   <li>
-    <td><%= gt.user.name %></td>
-    <td><%= gt.purpose %></td>
+    <td><%= gt.user.name %></td> |
+    <td><%= gt.user.employee_id %></td> |
+    <td><%= gt.purpose %></td> |
+    <td><%= gt.source %></td> |
+    <td><%= gt.destination %></td> |
+    <td><%= gt.distance %></td> |
+    <td><%= gt.created_at %></td>
   </li>
 <% end %>
-
 
 <br/>
 <br/>

@@ -2,18 +2,18 @@ class GroupsController < ApplicationController
   before_action :set_group, only: %i[show edit update destroy]
 
   def index
-    @groups = Group.all.order('name')
+    @groups = Group.includes(:user).alphabetically
   end
 
   def show
+    @group_travels = @group.travels.includes(:user)
   end
 
   def new
     @group = Group.new
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @group = current_user.groups.build(group_params)
@@ -46,6 +46,6 @@ class GroupsController < ApplicationController
   end
 
   def group_params
-    params.require(:group).permit(:name, :user_id)
+    params.require(:group).permit(:name, :user_id, :icon)
   end
 end

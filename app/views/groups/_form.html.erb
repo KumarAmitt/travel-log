@@ -1,15 +1,6 @@
 <%= form_with(model: group) do |form| %>
-  <% if group.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(group.errors.count, "error") %> prohibited this group from being saved:</h2>
 
-      <ul>
-        <% group.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= error_messages_for(group) %>
 
   <div class="field">
     <%= form.label :id %>
@@ -22,7 +13,7 @@
   </div>
 
   <div class="field">
-    <%= form.label :icon %>
+    <%= form.label :icon, 'Upload Icon' %>
     <%= form.file_field :icon %>
   </div>
 
@@ -35,4 +26,5 @@
   <div class="actions">
     <%= form.submit %>
   </div>
+
 <% end %>

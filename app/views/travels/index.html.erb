@@ -1,4 +1,3 @@
-<!--<p id="notice"><%#= notice %></p>-->
 
 <h1>All my Travels logs</h1>
 
@@ -16,6 +15,7 @@
       <th>Destination</th>
       <th>Distance</th>
       <th>user_id</th>
+      <th>created_at</th>
       <th>Group</th>
       <th colspan="3"></th>
     </tr>
@@ -30,6 +30,7 @@
         <td><%= travel.destination %></td>
         <td><%= travel.distance %></td>
         <td><%= travel.user_id %></td>
+        <td><%= travel.created_at %></td>
 
         <% if travel.groups.first.nil? %>
           <td><%= 'External Travel' %></td>

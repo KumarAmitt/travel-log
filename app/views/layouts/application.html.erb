@@ -12,12 +12,11 @@
 
   <body>
 
+<h1>*****</h1>
 
   <nav>
-    <%= link_to 'Home', root_path %> |
-    <%= link_to 'Login', new_user_session_path %> |
-    <%= link_to 'Sign Up', new_user_registration_path %> |
-    <%= link_to 'Sign out', destroy_user_session_path, method: :delete%>
+    <%= login_logout %>
+    <%= home_signup %>
   </nav>
 
   <p class="notice"><%= notice %></p>

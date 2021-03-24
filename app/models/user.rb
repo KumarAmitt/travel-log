@@ -6,4 +6,6 @@ class User < ApplicationRecord
 
   has_many :travels
   has_many :groups
+
+  has_one_attached :profile_pic
 end
