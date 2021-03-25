@@ -70,3 +70,7 @@
 .travel_tile {
     margin-left: -5em !important;
 }
+
+.travel_show_text {
+    font-size: 1.4rem;
+}
