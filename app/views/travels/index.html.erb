@@ -62,9 +62,12 @@
 <div class="col s12 m7">
   <div class="card horizontal">
     <div class="card-stacked">
-      <div class="card-content row">
-        <h4 class="col s8 left-align">Total Distance Travelled: </h4>
-        <h4 class="col s4 right-align"><%= @total_distance %><span class="km">km</span></h4>
+      <div class="card-content row secondary-content pink-text accent-4">
+        <h3 class="col s8 left-align">Total Distance Travelled: </h3>
+        <h3 class="col s4 right-align">
+          <%= @total_distance %>
+          <span class="km"> km</span>
+        </h3>
       </div>
     </div>
   </div>
@@ -79,15 +82,16 @@
           <%= travel_icon(travel) %>
         </div>
         <div class="col s10">
-          <span class="title">
-            <%= travel.user.name %> |
+          <span class="title pink-text accent-4">
+            <%= travel.user.name %>
+            <span> | </span>
             <%= travel.user.employee_id %>
           </span>
           <div class="left-align">
             <p><span class="teal-text">Purpose:</span> <%= travel.purpose %></p>
             <p><span class="teal-text">Source:</span> <%= travel.source %> </p>
             <p><span class="teal-text">Destination:</span> <%= travel.destination %></p>
-            <p><span class="teal-text">Date:</span> <%= travel.created_at %></p>
+            <p><span class="teal-text">Date:</span> <%= travel.created_at.to_s(:long_ordinal) %></p>
           </div>
         </div>
       </div>

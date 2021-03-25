@@ -5,9 +5,9 @@
 
         <%= profile_avatar %>
 
-        <a href="users/edit" class="btn-floating btn-large amber lighten-1">
-          <i class="large material-icons red-text">mode_edit</i>
-        </a>
+        <span class="btn-floating btn-large amber lighten-1">
+          <%= link_to '<i class="large material-icons red-text">mode_edit</i>'.html_safe, edit_user_registration_path %>
+        </span>
 
         <div class="profile_info">
           <p class="profile_info_name"><%= current_user.name %></p>
