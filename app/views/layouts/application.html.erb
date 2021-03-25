@@ -8,21 +8,40 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
   </head>
 
   <body>
 
-<h1>*****</h1>
-
   <nav>
-    <%= login_logout %>
-    <%= home_signup %>
+    <div class="nav-wrapper light-blue darken-3">
+     <%= link_to 'Peripatetick', root_path , class: 'brand-logo'%>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><%= login_logout %></li>
+        <li><%= home_signup %></li>
+      </ul>
+    </div>
   </nav>
 
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
 
+  <div class="container center-align">
 
-  <%= yield %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+    <%= yield %>
+
+  </div>
+
+  <%= render 'layouts/footer' %>
   </body>
 </html>
