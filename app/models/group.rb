@@ -8,4 +8,6 @@ class Group < ApplicationRecord
   has_many :travels, through: :travel_groups
 
   scope :alphabetically, -> { order('name') }
+
+  validates :name, presence: true, length: { in: 4..20 }
 end
