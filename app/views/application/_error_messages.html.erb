@@ -1,10 +1,13 @@
-<% if object && object.errors.any? %>
-    <h2><%= pluralize(object.errors.count, "error") %> prohibited this post from being saved:</h2>
+<div>
+  <% if object && object.errors.any? %>
+      <h2 class="chip red darken-1 white-text">
+        <%= pluralize(object.errors.count, "error") %> prohibited this post from being saved:
+      </h2>
 
-    <ul>
-      <% object.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
-
-<% end %>
+      <ul class="collection red-text">
+        <% object.errors.full_messages.each do |msg| %>
+          <li class="collection-item"><%= msg %></li>
+        <% end %>
+      </ul>
+  <% end %>
+</div>
