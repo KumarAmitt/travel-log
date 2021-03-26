@@ -7,7 +7,6 @@ ruby '2.7.2'
 gem 'rails', '~> 6.1.3'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
-gem 'pry-rails'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets
@@ -35,6 +34,7 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'capybara', '>= 3.26'
   gem 'factory_bot_rails', '~> 6.1'
+  gem 'pry-rails'
   gem 'rspec-rails'
   gem 'shoulda-matchers', '~> 4.5', '>= 4.5.1'
 end
