@@ -23,7 +23,6 @@ class TravelsController < ApplicationController
     else
       render 'new', status: :unprocessable_entity
     end
-
   end
 
   def update
@@ -37,7 +36,7 @@ class TravelsController < ApplicationController
         end
       end
 
-      redirect_to @travel, notice: "Travel was successfully updated."
+      redirect_to @travel, notice: 'Travel was successfully updated.'
     else
       render :edit, status: :unprocessable_entity
     end
@@ -45,7 +44,7 @@ class TravelsController < ApplicationController
 
   def destroy
     @travel.destroy
-    redirect_to travels_path, notice: "Travel was successfully destroyed"
+    redirect_to travels_path, notice: 'Travel was successfully destroyed'
   end
 
   def external_travel
@@ -70,5 +69,4 @@ class TravelsController < ApplicationController
   def my_travels
     current_user.travels.includes(:groups).recent_first
   end
-
 end

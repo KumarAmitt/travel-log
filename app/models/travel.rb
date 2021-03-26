@@ -1,5 +1,4 @@
 class Travel < ApplicationRecord
-
   belongs_to :user
 
   has_many :travel_groups, dependent: :destroy
@@ -12,4 +11,3 @@ class Travel < ApplicationRecord
 
   scope :recent_first, -> { order('created_at DESC') }
 end
-
