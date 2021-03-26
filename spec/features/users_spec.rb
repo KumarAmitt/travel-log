@@ -4,7 +4,7 @@ RSpec.feature 'User Credentials Validations', type: :feature do
   scenario 'New user should enter valid credentials and Sign Up' do
     visit new_user_registration_path
     fill_in :Name, with: 'Amit'
-    fill_in 'Employee Id', with: 'EMP01'
+    fill_in 'Employee Id (Must be 5 characters in length)', with: 'EMP01'
     fill_in :Email, with: 'amit@amit.com'
     fill_in 'Password (6 characters minimum)', with: 'password'
     fill_in 'Confirm Password', with: 'password'
