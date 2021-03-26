@@ -18,4 +18,5 @@ module ApplicationHelper
       link_to 'Sign Up', new_user_registration_path
     end
   end
+
 end

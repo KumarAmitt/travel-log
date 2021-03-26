@@ -28,25 +28,21 @@
 
   <body>
 
-  <nav>
-    <div class="nav-wrapper light-blue darken-3">
-     <%= link_to 'Peripatetick', root_path , class: 'brand-logo'%>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><%= login_logout %></li>
-        <li><%= home_signup %></li>
-      </ul>
-    </div>
-  </nav>
-
+  <%= render 'layouts/header' %>
 
   <div class="container center-align">
 
-    <p class="notice chip green"><%= notice %></p>
-    <p class="alert chip red"><%= alert %></p>
+    <br/>
+    <br/>
+    <div class="left-align">
+      <%= render 'layouts/messages' %>
+    </div>
+
 
     <%= yield %>
 
   </div>
+
 
   <%= render 'layouts/footer' %>
   </body>
