@@ -9,6 +9,6 @@ class User < ApplicationRecord
 
   has_one_attached :profile_pic
 
-  validates :employee_id, presence: true, uniqueness: true, length: { is: 5 }
+  validates :employee_id, presence: true, uniqueness: { case_sensitive: false }, length: { is: 5 }
   validates :name, presence: true, length: { in: 2..40 }
 end
