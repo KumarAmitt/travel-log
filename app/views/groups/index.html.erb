@@ -1,35 +1,76 @@
 <!--<p id="notice"><%#= notice %></p>-->
 
+<!--<h1>All Groups</h1>-->
+
+<!--<table>-->
+<!--  <thead>-->
+<!--    <tr>-->
+<!--      <th>ID</th>-->
+<!--      <th>Name</th>-->
+<!--      <th>user_id</th>-->
+<!--      <th>Author</th>-->
+<!--      <th>Create_at</th>-->
+<!--      <th colspan="3"></th>-->
+<!--    </tr>-->
+<!--  </thead>-->
+
+<!--  <tbody>-->
+    <%# @groups.each do |group| %>
+<!--      <tr>-->
+<!--        <td><%#= group.id %></td>-->
+<!--        <td><%#= group.name %></td>-->
+<!--        <td><%#= group.user_id %></td>-->
+<!--        <td><%#= group.user.name %></td>-->
+<!--        <td><%#= group.created_at%></td>-->
+<!--        <td><%#= link_to 'Show', group %></td>-->
+<!--        <td><%#= link_to 'Edit', edit_group_path(group) %></td>-->
+<!--        <td><%#= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
+<!--      </tr>-->
+    <%# end %>
+<!--  </tbody>-->
+<!--</table>-->
+
+<!--<br>-->
+
+<%#= link_to 'New Group', new_group_path %>
+
 <h1>All Groups</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Name</th>
-      <th>user_id</th>
-      <th>Author</th>
-      <th>Create_at</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="fixed-action-btn">
+    <span class="btn-floating btn-large red">
+      <%= link_to '<i class="large material-icons">add</i>'.html_safe, new_group_path %>
+    </span>
+</div>
 
-  <tbody>
-    <% @groups.each do |group| %>
-      <tr>
-        <td><%= group.id %></td>
-        <td><%= group.name %></td>
-        <td><%= group.user_id %></td>
-        <td><%= group.user.name %></td>
-        <td><%= group.created_at%></td>
-        <td><%= link_to 'Show', group %></td>
-        <td><%= link_to 'Edit', edit_group_path(group) %></td>
-        <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<% @groups.each do |group| %>
+  <ul class="collection">
+    <li class="collection-item avatar">
+      <div class="row travel_tile">
+        <div class="col s2">
+          <%= group_icon(group) %>
+        </div>
+        <div class="col s10">
+          <span class="title pink-text accent-4">
+            <%= group.name %>
+          </span>
+          <div class="left-align">
+            <p><span class="teal-text">Created By: </span> <%= group.user.name %></p>
+            <p><span class="teal-text">Author Employee Id: </span> <%= group.user.employee_id %> </p>
+            <p><span class="teal-text">Created On: </span> <%= group.created_at.to_s(:long_ordinal) %></p>
+          </div>
+        </div>
+      </div>
 
-<br>
+      <h3 class="secondary-content">
 
-<%= link_to 'New Group', new_group_path %>
+      </h3>
+
+      <div>
+        <%= link_to '<i class="small material-icons indigo-text darken-4">visibility</i>'.html_safe, group %>
+        <%= link_to '<i class="small material-icons teal-text darken-4">mode_edit</i>'.html_safe, edit_group_path(group) %>
+        <%= link_to '<i class="small material-icons deep-orange-text accent-3">delete</i>'.html_safe, group, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
+    </li>
+  </ul>
+<% end %>
+
