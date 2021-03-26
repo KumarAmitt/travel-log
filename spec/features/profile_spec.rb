@@ -1,5 +1,6 @@
 require 'rails_helper'
 
+# rubocop:disable Metrics/BlockLength
 RSpec.feature 'Profile validations', type: :feature do
   before(:each) do
     visit new_user_registration_path
@@ -42,3 +43,5 @@ RSpec.feature 'Profile validations', type: :feature do
     expect(page).to have_content 'All my External Travel-logs'
   end
 end
+
+# rubocop:enable Metrics/BlockLength

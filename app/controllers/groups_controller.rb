@@ -7,6 +7,7 @@ class GroupsController < ApplicationController
 
   def show
     @group_travels = @group.travels.includes(:user)
+    @distance = @group_travels.pluck(:distance).sum
   end
 
   def new

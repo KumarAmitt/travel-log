@@ -8,5 +8,5 @@ class Group < ApplicationRecord
 
   scope :alphabetically, -> { order('name') }
 
-  validates :name, presence: true, length: { in: 4..20 }
+  validates :name, presence: true, length: { in: 4..40 }
 end

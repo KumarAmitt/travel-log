@@ -55,7 +55,7 @@
           </span>
           <div class="left-align">
             <p><span class="teal-text">Created By: </span> <%= group.user.name %></p>
-            <p><span class="teal-text">Author Employee Id: </span> <%= group.user.employee_id %> </p>
+            <p><span class="teal-text">Author Employee Id: </span> <%= group.user.employee_id.upcase %> </p>
             <p><span class="teal-text">Created On: </span> <%= group.created_at.to_s(:long_ordinal) %></p>
           </div>
         </div>
@@ -67,8 +67,10 @@
 
       <div>
         <%= link_to '<i class="small material-icons indigo-text darken-4">visibility</i>'.html_safe, group %>
-        <%= link_to '<i class="small material-icons teal-text darken-4">mode_edit</i>'.html_safe, edit_group_path(group) %>
-        <%= link_to '<i class="small material-icons deep-orange-text accent-3">delete</i>'.html_safe, group, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% if group.user_id == current_user.id %>
+          <%= edit_group_link(group) %>
+          <%= delete_group_link(group) %>
+        <% end %>
       </div>
     </li>
   </ul>
