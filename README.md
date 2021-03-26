@@ -29,6 +29,12 @@ different basis e.g. department wise, month wise or the travel made by using pri
     
 ## Presentation
 
+[Watch Video Presentation]()
+
+## Live Demo Link
+
+[View Live on Heroku](https://glacial-hamlet-02969.herokuapp.com/)
+
 
 ## Built With 🛠
 
