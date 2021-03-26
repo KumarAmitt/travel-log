@@ -13,7 +13,7 @@ module ApplicationHelper
 
   def home_signup
     if user_signed_in?
-      link_to current_user.name, root_path
+      link_to current_user.name.upcase, root_path
     else
       link_to 'Sign Up', new_user_registration_path
     end
