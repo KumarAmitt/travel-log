@@ -3,7 +3,7 @@ module GroupsHelper
     if group.icon.attached?
       image_tag group.icon, class: 'travel_item_icon'
     else
-      image_tag '/assets/travel_icon.jpg', class: 'travel_item_icon'
+      image_tag 'travel_icon.jpg', class: 'travel_item_icon'
     end
   end
 
