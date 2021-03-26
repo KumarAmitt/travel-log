@@ -12,7 +12,11 @@ An employee can group his travel in different categories and also create a custo
 It's extremely easy for an organisation to monitor all the travel records of their employees on daily basis and estimate the allowances and analyse on 
 different basis e.g. department wise, month wise or the travel made by using private or public transportation.
 
-![screenshot](./app/assets/images/scr.png)
+![screenshot](./app/assets/images/s1.png)
+
+![screenshot](./app/assets/images/s2.png)
+
+![screenshot](./app/assets/images/s3.png)
 
 ## Features
 
