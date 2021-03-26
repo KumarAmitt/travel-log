@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.feature 'Profile validations', type: :feature do
-
   before(:each) do
     visit new_user_registration_path
     fill_in :Name, with: 'Amit'

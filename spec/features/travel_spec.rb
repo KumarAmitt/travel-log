@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.feature 'A valid user can navigate across different sections', type: :feature do
-
   before(:each) do
     visit new_user_registration_path
     fill_in :Name, with: 'Amit'
@@ -33,5 +32,4 @@ RSpec.feature 'A valid user can navigate across different sections', type: :feat
     visit external_path
     expect(page).to have_content 'All Groups'
   end
-
 end

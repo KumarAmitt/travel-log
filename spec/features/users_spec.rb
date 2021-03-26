@@ -32,5 +32,4 @@ RSpec.feature 'User Credentials Validations', type: :feature do
     visit root_path
     expect(page).to have_content 'Amit'
   end
-
 end
