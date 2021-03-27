@@ -20,15 +20,15 @@ different basis e.g. department wise, month wise or the travel made by using pri
 
 ## Features
 
-* A successful logged in user can visit to his profile page where he can edit his credentials and can upload/update his profile image
-* On the profile page a user can see link to 'All My Travel-Logs' where a new travel log can be created or user can view all the travel history, the most recent at the top.
-    * A user can also see the total distance travelled by him at the top
-    * A user can edit his log and delete the old ones
-* On the profile page a user can see link to 'All My External Travel-Logs', which shows the logs not assigned to any group.
-    * A user can see the total distance travelled which are not grouped at the top.
-    * A user can view, edit or delete logs from this page
-* On the profile page a user can find link to 'All Groups' page which shows list of all the groups.
-    * It lists all the groups along with the Author of corresponding group.
+* A successful logged-in user can visit their profile page and allowed to edit account credentials and can upload/update profile image.
+* On the profile page a user can see a link to 'All My Travel-Logs' where a new travel log can be created or the user can view all the travel history, the most recent at the top.
+    * A user can also see the total distance traveled by them at the top.
+    * A user can edit/delete previous logs.
+* On the profile page a user can see a link to 'All My External Travel-Logs', which shows the logs not assigned to any group.
+    * A user can see the total distance traveled which are not grouped at the top.
+    * A user can view, edit or delete previous logs.
+* On the profile page a user can find a link to the 'All Groups' page which shows a list of all the groups.
+    * It lists all the groups along with the Author of the corresponding group.
     * A user can create a new group or edit and delete it.
     
 ## Presentation
