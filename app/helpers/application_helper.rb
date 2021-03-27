@@ -20,9 +20,6 @@ module ApplicationHelper
   end
 
   def message(type, color)
-    if type.present?
-      "<div class='#{type} chip #{color} lighten-4'>#{type}</div>".html_safe
-    end
+    "<div class='#{type} chip #{color} lighten-4'>#{type}</div>".html_safe if type.present?
   end
-
 end

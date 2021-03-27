@@ -1,6 +1,7 @@
 require 'rails_helper'
 
-RSpec.feature "New Travel-log and New Group", type: :feature do
+# rubocop:disable Metrics/BlockLength
+RSpec.feature 'New Travel-log and New Group', type: :feature do
   before(:each) do
     visit new_user_registration_path
     fill_in :Name, with: 'Amit'
@@ -51,4 +52,4 @@ RSpec.feature "New Travel-log and New Group", type: :feature do
   end
 end
 
-
+# rubocop:enable Metrics/BlockLength
