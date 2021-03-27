@@ -1,6 +1,6 @@
 module ApplicationHelper
   def error_messages_for(object)
-    render(partial: 'application/error_messages', locals: { object: object })
+    render(partial: 'devise/shared/error_messages', locals: { resource: object })
   end
 
   def login_logout
@@ -18,4 +18,11 @@ module ApplicationHelper
       link_to 'Sign Up', new_user_registration_path
     end
   end
+
+  def message(type, color)
+    if type.present?
+      "<div class='#{type} chip #{color} lighten-4'>#{type}</div>".html_safe
+    end
+  end
+
 end

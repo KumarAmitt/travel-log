@@ -58,10 +58,11 @@ different basis e.g. department wise, month wise or the travel made by using pri
 3. - [ ] Run `git@github.com:KumarAmitt/travel-log.git` to download <b>or</b> you can download using `HTTPS` by running `https://github.com/KumarAmitt/travel-log.git` in the terminal
 4. - [ ] Run `cd travel-log` to enter directory
 5. - [ ] Run `bundle install` to install Ruby Gems.
-6. - [ ] Run `rails db:create` to create your database
-7. - [ ] Run `rails db:migrate` to migrate your database
-8. - [ ] Run `rails s` to get the server running
-9. - [ ] Enter `http://localhost:3000/` in the browser to get the app running
+6. - [ ] Run `yarn install --check-files` to install yarn.
+7. - [ ] Run `rails db:create` to create your database
+8. - [ ] Run `rails db:migrate` to migrate your database
+9. - [ ] Run `rails s` to get the server running
+10. - [ ] Enter `http://localhost:3000/` in the browser to get the app running
 
 ## Testing
 

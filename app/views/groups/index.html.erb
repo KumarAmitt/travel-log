@@ -8,38 +8,37 @@
 </div>
 
 <% @groups.each do |group| %>
-  <% unless group.user.nil? %>
-    <ul class="collection">
-      <li class="collection-item avatar">
-        <div class="row travel_tile">
-          <div class="col s2">
-            <%=  group_icon(group)  %>
-          </div>
-          <div class="col s10">
-          <span class="title pink-text accent-4">
-            <%=  group.name  %>
-          </span>
-            <div class="left-align">
-              <p><span class="teal-text">Created By: </span> <%=  group.user.name  %></p>
-              <p><span class="teal-text">Author Employee Id: </span> <%=  group.user.employee_id.upcase  %> </p>
-              <p><span class="teal-text">Created On: </span> <%=  group.created_at.to_s(:long_ordinal)  %></p>
-            </div>
+  <ul class="collection">
+    <li class="collection-item avatar">
+      <div class="row travel_tile">
+        <div class="col s2">
+          <%=  group_icon(group)  %>
+        </div>
+        <div class="col s10">
+        <span class="title pink-text accent-4">
+          <%=  group.name  %>
+        </span>
+          <div class="left-align">
+            <p><span class="teal-text">Created By: </span> <%=  group.user.name  %></p>
+            <p><span class="teal-text">Author Employee Id: </span> <%=  group.user.employee_id.upcase  %> </p>
+            <p><span class="teal-text">Created On: </span> <%=  group.created_at.to_s(:long_ordinal)  %></p>
           </div>
         </div>
+      </div>
 
-        <h3 class="secondary-content">
+      <h3 class="secondary-content">
 
-        </h3>
+      </h3>
 
-        <div>
-          <%=  link_to '<i class="small material-icons indigo-text darken-4">visibility</i>'.html_safe, group  %>
-          <%  if group.user_id == current_user.id  %>
-          <%=  edit_group_link(group)  %>
-          <%=  delete_group_link(group)  %>
-          <%  end  %>
-        </div>
-      </li>
-    </ul>
-  <% end %>
+      <div>
+        <%=  link_to '<i class="small material-icons indigo-text darken-4">visibility</i>'.html_safe, group  %>
+        <%  if group.user_id == current_user.id  %>
+        <%=  edit_group_link(group)  %>
+        <%=  delete_group_link(group)  %>
+        <%  end  %>
+      </div>
+    </li>
+  </ul>
+
 <% end %>
 

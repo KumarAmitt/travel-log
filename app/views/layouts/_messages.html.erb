@@ -1,11 +1,6 @@
 
-<% if notice.present? %>
-  <div class="notice chip green lighten-4"><%= notice %></div>
-<% end %>
+<%= message notice, 'green' %>
 
-<% if alert.present? %>
-  <div class="alert chip red lighten-4"><%= alert %></div>
-<% end %>
-
+<%= message alert, 'red' %>
 
 
