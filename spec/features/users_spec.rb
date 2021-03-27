@@ -9,7 +9,6 @@ RSpec.feature 'User Credentials Validations', type: :feature do
     fill_in 'Password (6 characters minimum)', with: 'password'
     fill_in 'Confirm Password', with: 'password'
     click_on 'SIGN UP'
-    User.create(name: 'Amit', employee_id: 'EMP01', email: 'amit@amit.com', password: 'password')
   end
 
   scenario 'should enter valid email and password to login and visit his profile page' do

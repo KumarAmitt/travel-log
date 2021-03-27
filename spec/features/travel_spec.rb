@@ -9,7 +9,6 @@ RSpec.feature 'A valid user can navigate across different sections', type: :feat
     fill_in 'Password (6 characters minimum)', with: 'password'
     fill_in 'Confirm Password', with: 'password'
     click_on 'SIGN UP'
-    User.create(name: 'Amit', employee_id: 'EMP01', email: 'amit@amit.com', password: 'password')
   end
 
   scenario 'should able to visit All My Travel-Logs page' do

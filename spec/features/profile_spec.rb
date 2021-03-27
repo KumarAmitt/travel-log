@@ -3,7 +3,6 @@ require 'rails_helper'
 # rubocop:disable Metrics/BlockLength
 RSpec.feature 'Profile validations', type: :feature do
   before(:each) do
-    subject {}
     visit new_user_registration_path
     fill_in :Name, with: 'Amit'
     fill_in 'Employee Id (Must be 5 characters in length)', with: 'EMP01'
@@ -11,7 +10,6 @@ RSpec.feature 'Profile validations', type: :feature do
     fill_in 'Password (6 characters minimum)', with: 'password'
     fill_in 'Confirm Password', with: 'password'
     click_on 'SIGN UP'
-    User.create(name: 'Amit', employee_id: 'EMP01', email: 'amit@amit.com', password: 'password')
   end
 
   scenario 'should visit the profile page and see his name' do
