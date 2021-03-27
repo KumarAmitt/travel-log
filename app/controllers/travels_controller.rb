@@ -48,8 +48,8 @@ class TravelsController < ApplicationController
   end
 
   def external_travel
-    @external = my_travels.select { |t| t.groups.size.zero? }
-    @total_distance = @external.pluck(:distance).sum
+    @external = my_travels.left_joins(:travel_groups).where('group_id IS NULL')
+    @total_distance = @external.sum(:distance)
   end
 
   private
