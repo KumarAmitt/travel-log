@@ -8,4 +8,8 @@ module TravelsHelper
       image_tag travel.groups.first.icon, class: 'travel_item_icon'
     end
   end
+
+  def my_travels(travel)
+
+  end
 end
